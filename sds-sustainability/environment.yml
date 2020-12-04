@@ -1,0 +1,23 @@
+name: base
+
+channels:
+  - conda-forge
+    
+dependencies:
+  - python=3.8
+  - pandas 
+  - geopandas 
+  - matplotlib 
+  - pysal 
+  - mapclassify 
+  - geojson 
+  - rasterio 
+  - contextily 
+  - folium 
+  - mplleaflet 
+  - osmnx 
+  - pyrosm 
+  - python-igraph 
+  - momepy
+  - jupyterlab
+  - jupyterlab-git

@@ -82,8 +82,10 @@ Other useful docs:
    
 ## Configure the Blueprint environment using a dedicated GitHub notebook repo
 
-As a starting point, [check this CSC Pebbles guide](http://cscfi.github.io/pebbles/group_owners_guide.html).
-To specify which repository should always be cloned as a starting point when the students use CSC Notebooks, you need to:
+After a "clean" Docker/JupyterLab environment has been created for your course, you want to configure which materials will be used
+as source in your course Notebook environment. As a starting point, [please check this CSC Pebbles guide](http://cscfi.github.io/pebbles/group_owners_guide.html).
+
+To specify which repository should always be cloned for your programming environment (i.e when the students use CSC Notebooks), you need to:
 
 1. Create a dedicated repository for your course notebooks **OR** add a new branch to [AaltoGIS/notebooks](https://github.com/AaltoGIS/notebooks) repository with your materials.
 

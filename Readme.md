@@ -6,7 +6,7 @@ https://github.com/csc-training/geocomputing/blob/master/rahti/autogis-course-pa
 Other useful docs:
 - [How to get Docker to play nicely with your Python Data Science package](https://medium.com/better-programming/how-to-get-docker-to-play-nicely-with-your-python-data-science-packages-81d16f1080d2)
 
-# Steps
+## Steps
 
 1. Install Docker and OpenShift
 2. Update the [Python environment](environment.yml) with required packages
@@ -79,4 +79,19 @@ Other useful docs:
         3. Specify the memory limit as `8000M` (remember to ask permission from CSC guys for larger instances, e.g. for 16GB)
         
    4. Activate the Blueprint under the `Deactive Blueprints` section. After this, the blueprint will be available under the "Dashboard" tab.
+   
+## Configure the Blueprint environment using a dedicated GitHub notebook repo
+
+As a starting point, [check this CSC Pebbles guide](http://cscfi.github.io/pebbles/group_owners_guide.html).
+To specify which repository should always be cloned as a starting point when the students use CSC Notebooks, you need to:
+
+1. Create a dedicated repository for your course notebooks **OR** add a new branch to [AaltoGIS/notebooks](https://github.com/AaltoGIS/notebooks) repository with your materials.
+
+ - In this repository you should add all the notebooks that you want the students to be able to see and run during the lessons. 
+ Typically you want to update this repo for each week (so that the students don't see all materials at once). 
+ 
+2. Create a configuration file for your course into [AaltoGIS/CSC-notebooks-env-config](https://github.com/AaltoGIS/CSC-notebooks-env-config) following the instructions in that repo. 
+
+   
+
         

@@ -5,19 +5,41 @@ channels:
     
 dependencies:
   - python=3.8
-  - pandas 
-  - geopandas 
-  - matplotlib 
-  - pysal 
-  - mapclassify 
-  - geojson 
-  - rasterio 
-  - contextily 
-  - folium 
-  - mplleaflet 
-  - osmnx 
-  - pyrosm 
-  - python-igraph 
+  - pandas
+  - geopandas
+  - matplotlib
+  - pysal
+  - mapclassify
+  - scipy
+  - scikit-learn
+  - geojson
+  - rasterio
+  - rasterstats
+  - xarray
+  - contextily
+  - folium
+  - mplleaflet
+  - networkx
+  - osmnx
+  - pandana
+  - pyrosm
+  - python-igraph
   - momepy
+  - movingpandas
+  - scikit-mobility
   - jupyterlab
   - jupyterlab-git
+  - earthpy
+  - simpy
+  - tqdm
+  - pyarrow
+  - vaex
+  - vaex-arrow
+  - mesa
+  - dash
+  - plotly_express
+  - datashader
+  - bokeh
+  - hvplot
+  - geoplot
+  - geopy

@@ -80,6 +80,11 @@ Other useful docs:
         
    4. Activate the Blueprint under the `Deactive Blueprints` section. After this, the blueprint will be available under the "Dashboard" tab.
    
+## How to update Docker image?
+
+If you need to update the docker image in Rahti, make a new image and push it to Rahti Docker registry (steps 1-5 above).
+After you have pushed a new image to the registry, rest of the things updates automatically.
+   
 ## Configure the Blueprint environment using a dedicated GitHub notebook repo
 
 After a "clean" Docker/JupyterLab environment has been created for your course, you want to configure which materials will be used

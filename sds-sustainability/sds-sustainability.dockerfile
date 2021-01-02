@@ -13,6 +13,14 @@ RUN echo "Upgrading conda" \
 COPY environment.yml .
 RUN conda env update -n base -f environment.yml
 
+# Install packages from requirements with pip (conda pip installation has issues with docker)
+# There might be a solution, check later.
+# See issue: https://github.com/jupyter/docker-stacks/issues/678
+
+# NOTE: If you do not have any packages to install with pip comment out following two lines
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 RUN jupyter lab build
 
 RUN conda clean -afy

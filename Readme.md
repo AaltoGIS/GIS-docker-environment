@@ -82,7 +82,7 @@ Other useful docs:
    
 ## How to update Docker image?
 
-If you need to update the docker image in Rahti, make a new image and push it to Rahti Docker registry (steps 1-5 above).
+If you need to update the docker image in Rahti, make a new image and push it to Rahti Docker registry (steps 2-5 above).
 After you have pushed a new image to the registry, rest of the things updates automatically.
    
 ## Configure the Blueprint environment using a dedicated GitHub notebook repo

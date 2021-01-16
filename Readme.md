@@ -83,7 +83,8 @@ Other useful docs:
 ## How to update Docker image?
 
 If you need to update the docker image in Rahti, make a new image and push it to Rahti Docker registry (steps 2-5 above).
-After you have pushed a new image to the registry, rest of the things updates automatically.
+After you have pushed a new image to the registry, the environment will be updated to Notebooks after repeating step 9 above 
+(i.e. increase the number of pods and bring them down).  
    
 ## Configure the Blueprint environment using a dedicated GitHub notebook repo
 

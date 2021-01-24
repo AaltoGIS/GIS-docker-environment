@@ -21,6 +21,9 @@ RUN conda env update -n base -f environment.yml
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+RUN jupyter labextension install jupyterlab-plotly@4.14.3
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.14.3
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-jupyter
 RUN jupyter lab build
 
 RUN conda clean -afy

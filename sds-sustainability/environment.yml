@@ -36,7 +36,7 @@ dependencies:
   - momepy
   - movingpandas
   - scikit-mobility
-  - jupyterlab
+  - jupyterlab=3.06
   - jupyterlab-git
   - earthpy
   - tqdm

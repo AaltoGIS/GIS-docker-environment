@@ -15,6 +15,7 @@ dependencies:
   - spint
   - spreg
   - segregation
+  - splot
   - access
   - mgwr
   - scipy

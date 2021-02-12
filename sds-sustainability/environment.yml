@@ -15,6 +15,7 @@ dependencies:
   - spint
   - spreg
   - segregation
+  - splot
   - access
   - mgwr
   - scipy
@@ -35,7 +36,7 @@ dependencies:
   - momepy
   - movingpandas
   - scikit-mobility
-  - jupyterlab
+  - jupyterlab=3.0.6
   - jupyterlab-git
   - earthpy
   - tqdm

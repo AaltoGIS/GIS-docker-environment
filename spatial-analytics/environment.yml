@@ -5,49 +5,74 @@ channels:
 
 dependencies:
   - python=3.9
-  - mamba
-  - pandas
-  - geopandas
-  - matplotlib
-  - pysal
-  - mapclassify
-  - spaghetti
-  - spint
-  - spreg
-  - segregation
-  - splot
   - access
-  - mgwr
-  - scipy
-  - scikit-learn
-  - geojson
-  - rasterio
-  - rasterstats
-  - xarray
+  - bokeh
+  - clustergram
   - contextily
+  - dash
+  - dask
+  - dask-ml
+  - datashader
+  - earthpy
+  - esda
   - folium
+  - geocube
+  - geojson
+  - geopandas
+  - geoplot
+  - geopy
+  - giddy
+  - gstools
+  - h3-py
+  - hdbscan
+  - hvplot
+  - inequality
+  - jupyterlab=3.0.6
+  - jupyterlab-git
+  - legendgram
+  - mamba
+  - mapclassify
+  - matplotlib
+  - mesa
+  - mgwr
+  - momepy
+  - movingpandas
   - mplleaflet
   - networkx
   - osmnx
+  - palettable
   - pandana
-  - pyrosm
-  - python-igraph
-  - urbanaccess
-  - momepy
-  - movingpandas
-  - scikit-mobility
-  - jupyterlab=3.0.6
-  - jupyterlab-git
-  - earthpy
-  - tqdm
+  - pandas
+  - plotly_express
+  - pointpats
+  - polyline
   - pyarrow
+  - pygeos
+  - pykrige
+  - pyrosm
+  - pysal
+  - python-igraph
+  - rasterio
+  - rasterstats
+  - scikit-image
+  - scikit-learn
+  - scikit-mobility
+  - scipy
+  - seaborn
+  - segregation
+  - spaghetti
+  - spint
+  - splot
+  - spreg
+  - sqlalchemy
+  - statsmodels
+  - tobler
+  - tqdm
+  - urbanaccess
   - vaex
   - vaex-arrow
-  - mesa
-  - dash
-  - plotly_express
-  - datashader
-  - bokeh
-  - hvplot
-  - geoplot
-  - geopy
+  - xarray
+  - xarray_leaflet
+  - xarray-spatial
+  - xlrd
+  - xlsxwriter

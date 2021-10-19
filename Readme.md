@@ -9,9 +9,10 @@ Other useful docs:
 ## Steps
 
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/), [configure Docker to work without sudo](https://docs.docker.com/engine/install/linux-postinstall/) and [install OpenShift](https://www.howtoforge.com/how-to-install-and-configure-openshift-origin-paas-server-on-ubuntu-2004/)
+   1. For Docker, [enable experimental features](https://stackoverflow.com/a/44346323)
 2. Update the [Python environment](environment.yml) with required packages
 3. Run build.sh (within the course folder) that will create the Docker container 
-   1. If the image is large, try to make it smaller (5 GB limit) with [these tricks](https://docs.csc.fi/cloud/rahti/images/keeping_docker_images_small/)
+   1. If the image is large, try to make it smaller (5 GB limit) with [these tricks](https://docs.csc.fi/cloud/rahti/images/keeping_docker_images_small/). Take a look at [spatial-analytics.dockerfile](spatial-analytics/spatial-analytics.dockerfile) for inspiration.
 4. Make a dedicated project for the course if it does not exist yet at https://registry-console.rahti.csc.fi/ 
   
    - Access policy should be `Anonymous: Allow all unauthenticated users to pull images`

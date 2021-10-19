@@ -9,9 +9,12 @@ USER 1000
 RUN echo "Upgrading conda" \
 && conda update --yes -n base conda
 
+# Install mamba for faster installation process
+RUN conda install mamba -n base -c conda-forge
+
 # Install environment from local yml file
 COPY environment.yml .
-RUN conda env update -n base -f environment.yml
+RUN mamba env update -n base -f environment.yml
 
 # Install packages from requirements with pip (conda pip installation has issues with docker)
 # There might be a solution, check later.

@@ -11,6 +11,7 @@ Other useful docs:
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/), [configure Docker to work without sudo](https://docs.docker.com/engine/install/linux-postinstall/) and [install OpenShift](https://www.howtoforge.com/how-to-install-and-configure-openshift-origin-paas-server-on-ubuntu-2004/)
 2. Update the [Python environment](environment.yml) with required packages
 3. Run build.sh (within the course folder) that will create the Docker container 
+   1. If the image is large, try to make it smaller (5 GB limit) with [these tricks](https://docs.csc.fi/cloud/rahti/images/keeping_docker_images_small/)
 4. Make a dedicated project for the course if it does not exist yet at https://registry-console.rahti.csc.fi/ 
   
    - Access policy should be `Anonymous: Allow all unauthenticated users to pull images`
@@ -36,12 +37,12 @@ Other useful docs:
    
       - `docker push docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
       
-6. Deploy the pushed image to Rahti
+**Deploy the pushed image to Rahti**
 
   1. Go to https://rahti.csc.fi -> Web user interface -> Choose your project
   2. "Add to project" (top right) -> Deploy image -> Choose your image -> Deploy
 
-7. Add route for the object (make the application publicly available/visible)
+  3. Add route for the object (make the application publicly available/visible)
 
   - Applications (left) -> Routes -> Create Route (top right) -> Fill only "Name" and "Service"
 

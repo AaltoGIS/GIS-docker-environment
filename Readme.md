@@ -10,7 +10,7 @@ Other useful docs:
 
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/), [configure Docker to work without sudo](https://docs.docker.com/engine/install/linux-postinstall/) and [install OpenShift](https://www.howtoforge.com/how-to-install-and-configure-openshift-origin-paas-server-on-ubuntu-2004/)
 2. Update the [Python environment](environment.yml) with required packages
-3. Run build.sh that will create the Docker container 
+3. Run build.sh (within the course folder) that will create the Docker container 
 4. Make a dedicated project for the course if it does not exist yet at https://registry-console.rahti.csc.fi/ 
   
    - Access policy should be `Allow anonymous users to pull images`

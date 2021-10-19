@@ -13,28 +13,28 @@ Other useful docs:
 3. Run build.sh (within the course folder) that will create the Docker container 
 4. Make a dedicated project for the course if it does not exist yet at https://registry-console.rahti.csc.fi/ 
   
-   - Access policy should be `Allow anonymous users to pull images`
+   - Access policy should be `Anonymous: Allow all unauthenticated users to pull images`
 
-5. Push to docker image to Rahti
+5. Push to docker image to Rahti (replace `<image-name>` and `<project-name>` below to correspond your settings):
   
    1. Declare environment variables:
       
-      - `export OSO_PROJECT=sds-sustainability`  (<-- this should match with the course project name that you created in step 4)
+      - `export OSO_PROJECT=<project-name>`  (<-- this should match with the course project name that you created in step 4)
       - `export OSO_REGISTRY=docker-registry.rahti.csc.fi`
       
    2. Login to the Rahti docker image registry from docker and oc (get the tokens from Rahti registry web pages)
    
       - `docker login -p <DOCKER-LOGIN-TOKEN-HERE> -u unused docker-registry.rahti.csc.fi`
       - `oc login --token <OpenShift-LOGIN-TOKEN-HERE> rahti.csc.fi:8443`   
-      - Switch to correct project (if needed) by: `oc project sds-sustainability`
+      - Switch to correct project (if needed) by: `oc project <project name>`
       
    3. Tag the image you want to send to the registry
      
-      - `docker tag csc/sds-sustainability docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`   
+      - `docker tag csc/<image-name> docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`   
  
    4. Push the image to Rahti image registry
    
-      - `docker push docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
+      - `docker push docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
       
 6. Deploy the pushed image to Rahti
 
@@ -74,7 +74,7 @@ Other useful docs:
         1. Fill the name and description as you see best.
         2. Specify the source for the Blueprint from Rahti registry:
           
-           - `docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
+           - `docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
            
         3. Specify the memory limit as `8000M` (remember to ask permission from CSC guys for larger instances, e.g. for 16GB)
         

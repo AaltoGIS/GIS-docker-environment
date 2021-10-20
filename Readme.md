@@ -70,8 +70,9 @@ Other useful docs:
 10. Running the container in notebooks.csc.fi
 
    1. If you don't have group owner rights at CSC Notebooks, apply for those by sending email to servicedesk@csc.fi
-   2. Login to https://notebooks.csc.fi
-   3. Create a new Blueprint in Notebooks (under Blueprints tab) by using a template that uses Rahti, e.g. `Rahti Jupyter Minimal`
+   2. Login to https://notebooks.csc.fi 
+   3. Create a new Group for the course (under the "Groups" -tab) which will be used to invite students to the course CSC Notebook
+   4. Create a new Blueprint in Notebooks (under Blueprints tab) by using a template that uses Rahti, e.g. `Rahti Jupyter Minimal`
         
         1. Fill the name and description as you see best.
         2. Specify the source for the Blueprint from Rahti registry:
@@ -80,7 +81,7 @@ Other useful docs:
            
         3. Specify the memory limit as `8000M` (remember to ask permission from CSC guys for larger instances, e.g. for 16GB)
         
-   4. Activate the Blueprint under the `Deactive Blueprints` section. After this, the blueprint will be available under the "Dashboard" tab.
+   5. Activate the Blueprint under the `Deactive Blueprints` section. After this, the blueprint will be available under the "Dashboard" tab.
    
 ## How to update Docker image?
 

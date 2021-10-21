@@ -39,6 +39,7 @@ dependencies:
   - movingpandas
   - mplleaflet
   - networkx
+  - openpyxl
   - osmnx
   - palettable
   - pandana

@@ -55,6 +55,7 @@ dependencies:
   - python-igraph
   - rasterio
   - rasterstats
+  - richdem
   - scikit-image
   - scikit-learn
   - scikit-mobility

@@ -6,6 +6,7 @@ WORKDIR /opt/app
 USER 1000
 
 COPY environment.yml .
+COPY requirements.txt .
 COPY ./instance_start_script.sh /usr/local/bin/instance_start_script.sh
 ENV HOME /home/jovyan
 
@@ -15,6 +16,8 @@ RUN echo "Upgrading conda" \
 && conda install mamba -n base -c conda-forge \
 # Install pkgs from environment.yml
 && mamba env update -n base -f environment.yml \
+# Install with pip from requirements.txt
+&& pip install -r requirements.txt \
 && jupyter lab build  \
 # Clean as much as possible
 && conda clean --all --yes --force-pkgs-dirs \

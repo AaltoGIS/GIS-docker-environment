@@ -51,3 +51,4 @@ dependencies:
   - hvplot
   - geoplot
   - geopy
+  - cykhash=1.0.2

@@ -1,35 +1,35 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/minimal-notebook
 
-MAINTAINER Johannes Nyman <johannes.nyman@csc.fi>
+MAINTAINER Henrikki Tenkanen <henrikki.tenkanen@aalto.fi>
 
 WORKDIR /opt/app
 USER 1000
 
-### Installing the GIS libraries and jupyter lab extensions. Modify this and make sure the conda spell is working
-RUN echo "Upgrading conda" \
-&& conda update --yes -n base conda
-
-# Install environment from local yml file
 COPY environment.yml .
-RUN conda env update -n base -f environment.yml
-
-# Install packages from requirements with pip (conda pip installation has issues with docker)
-# There might be a solution, check later.
-# See issue: https://github.com/jupyter/docker-stacks/issues/678
-
-# NOTE: If you do not have any packages to install with pip comment out following two lines
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+COPY ./instance_start_script.sh /usr/local/bin/instance_start_script.sh
+ENV HOME /home/jovyan
 
-RUN jupyter labextension install jupyterlab-plotly@4.14.3
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.14.3
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-jupyter
-RUN jupyter lab build
-
-RUN conda clean -afy
+### Installing the GIS libraries
+RUN echo "Upgrading conda" \
+&& conda update --yes -n base conda \
+&& conda install mamba -n base -c conda-forge \
+# Install pkgs from environment.yml
+&& mamba env update -n base -f environment.yml \
+# Install with pip from requirements.txt
+&& pip install -r requirements.txt \
+&& jupyter lab build  \
+# Clean as much as possible
+&& conda clean --all --yes --force-pkgs-dirs \
+&& jupyter lab clean -y \
+&& npm cache clean --force \
+&& find /opt/conda/ -follow -type f -name '*.a' -delete \
+&& find /opt/conda/ -follow -type f -name '*.pyc' -delete \
+&& find /opt/conda/ -follow -type f -name '*.js.map' -delete \
+&& find /opt/conda/lib/python*/site-packages/bokeh/server/static \
+    -follow -type f -name '*.js' ! -name '*.min.js' -delete
 
 USER root
-
 # OpenShift allocates the UID for the process, but GID is 0
 # Based on an example by Graham Dumpleton
 RUN chgrp -R root /home/jovyan \
@@ -37,22 +37,10 @@ RUN chgrp -R root /home/jovyan \
     && find /home/jovyan -type f -exec chmod g+rw {} \; \
     && chgrp -R root /opt/conda \
     && find /opt/conda -type d -exec chmod g+rwx,o+rx {} \; \
-    && find /opt/conda -type f -exec chmod g+rw {} \;
-
-# IS this needed?
-#RUN ln -s /usr/bin/env /bin/env
-
-ENV HOME /home/jovyan
-
-COPY ./instance_start_script.sh /usr/local/bin/instance_start_script.sh
-RUN chmod a+x /usr/local/bin/instance_start_script.sh
-
-# compatibility with old blueprints, remove when not needed
-#RUN ln -s /usr/local/bin/instance_start_script.sh /usr/local/bin/bootstrap_and_start.bash
+    && find /opt/conda -type f -exec chmod g+rw {} \; \
+    && chmod a+x /usr/local/bin/instance_start_script.sh
 
 USER 1000
-
 WORKDIR /home/jovyan/work
-
 CMD ["/usr/local/bin/instance_start_script.sh"]
 

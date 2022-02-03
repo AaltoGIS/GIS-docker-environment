@@ -49,7 +49,7 @@ Other useful docs:
 
 8. Add persistent storage 
 
-  1. Create persistent storage:
+  1. Create persistent storage (this is the storage allocated for the **whole project**):
 
       - Storage (left) -> Create Storage (top right) -> Storage Class: glusterfs, Name: unique name, Access Mode: RWO, Size: 5GB
 

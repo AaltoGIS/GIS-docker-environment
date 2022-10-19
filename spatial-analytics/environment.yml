@@ -4,7 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
-  - python=3.9
+  - python=3.10
   - access
   - bokeh
   - clustergram
@@ -24,10 +24,9 @@ dependencies:
   - giddy
   - gstools
   - h3-py
-  - hdbscan
   - hvplot
   - inequality
-  - jupyterlab=3.0.6
+  - jupyterlab
   - jupyterlab-git
   - legendgram
   - mamba
@@ -49,13 +48,16 @@ dependencies:
   - polyline
   - pyarrow
   - pygeos
+  - pyinterpolate
   - pykrige
   - pyrosm
   - pysal
   - python-igraph
+  - r5py
   - rasterio
   - rasterstats
   - richdem
+  - rioxarray
   - scikit-image
   - scikit-learn
   - scikit-mobility

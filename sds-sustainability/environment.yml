@@ -21,6 +21,7 @@ dependencies:
   - geopandas
   - geoplot
   - geopy
+  - geoviews
   - giddy
   - gstools
   - h3-py
@@ -44,6 +45,7 @@ dependencies:
   - palettable
   - pandana
   - pandas
+  - panel
   - plotly_express
   - pointpats
   - polyline

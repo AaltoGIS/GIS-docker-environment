@@ -34,10 +34,12 @@ Other useful docs:
    3. Tag the image you want to send to the registry
      
       - `docker tag csc/<image-name> docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`   
+        - Sustainability course: `docker tag csc/sds-sustainability docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
  
    4. Push the image to Rahti image registry
    
       - `docker push docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
+        - Sustainability course: `docker push docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
       
 **Deploy the pushed image to Rahti**
 

@@ -23,7 +23,9 @@ RUN echo "Upgrading conda" \
 # Install pkgs from environment.yml
 && mamba env update -n base -f environment.yml \
 # Install with pip from requirements.txt
-# && pip install -r requirements.txt \
+&& pip install -r requirements.txt \
+# Install keplergl extension
+&& jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-jupyter \
 && jupyter lab build  \
 # Clean as much as possible
 && conda clean --all --yes --force-pkgs-dirs \

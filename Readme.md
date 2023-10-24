@@ -35,11 +35,13 @@ Other useful docs:
      
       - `docker tag csc/<image-name> docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`   
         - Sustainability course: `docker tag csc/sds-sustainability docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
+        - Spatial Analytics course: `docker tag csc/spatial-analytics docker-registry.rahti.csc.fi/spatial-analytics-course/spatial-analytics:latest`
  
    4. Push the image to Rahti image registry
    
       - `docker push docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
         - Sustainability course: `docker push docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
+        - Spatial analytics course: `docker push docker-registry.rahti.csc.fi/spatial-analytics-course/spatial-analytics:latest`
       
 **Deploy the pushed image to Rahti**
 

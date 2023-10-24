@@ -11,6 +11,7 @@ RUN apt-get update \
 # the user set here will be the user that students will use
 USER $NB_USER
 ENV HOME /home/$NB_USER
+ENV NODE_OPTIONS=--max-old-space-size=4096
 
 COPY environment.yml .
 COPY requirements.txt .

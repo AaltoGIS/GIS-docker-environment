@@ -11,6 +11,7 @@ RUN apt-get update \
 # the user set here will be the user that students will use
 USER $NB_USER
 ENV HOME /home/$NB_USER
+ENV NODE_OPTIONS=--max-old-space-size=4096
 
 COPY environment.yml .
 COPY requirements.txt .
@@ -25,7 +26,8 @@ RUN echo "Upgrading conda" \
 # Install with pip from requirements.txt
 && pip install -r requirements.txt \
 # Install keplergl extension
-&& jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-jupyter \
+&& jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+&& jupyter labextension install keplergl-jupyter \
 && jupyter lab build  \
 # Clean as much as possible
 && conda clean --all --yes --force-pkgs-dirs \

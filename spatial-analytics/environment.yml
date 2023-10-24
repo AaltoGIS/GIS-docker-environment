@@ -4,7 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
-  - python=3.12
+  - python=3.11
   - access
   - bokeh
   - clustergram
@@ -39,6 +39,7 @@ dependencies:
   - mplleaflet
   - networkx
   - openpyxl
+  - openjdk
   - osmnx
   - palettable
   - pandana
@@ -50,7 +51,7 @@ dependencies:
   - pygeos
   - pyinterpolate
   - pykrige
-  - pyrosm
+  # - pyrosm
   - pysal
   - python-igraph
   - r5py
@@ -73,8 +74,8 @@ dependencies:
   - tobler
   - tqdm
   - urbanaccess
-  - vaex
-  - vaex-arrow
+  # - vaex
+  # - vaex-arrow
   - xarray
   - xarray_leaflet
   - xarray-spatial

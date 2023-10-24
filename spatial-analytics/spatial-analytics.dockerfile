@@ -5,8 +5,10 @@ MAINTAINER Henrikki Tenkanen <henrikki.tenkanen@aalto.fi>
 # Install openjdk
 USER root
 RUN apt-get update \
-    && apt-get install -y openjdk-11-jdk \
     && apt-get clean
+
+    # OpenJDK 11 not needed anymore for r5py
+    # && apt-get install -y openjdk-11-jdk \
 
 # the user set here will be the user that students will use
 USER $NB_USER

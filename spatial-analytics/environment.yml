@@ -4,7 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
-  - python=3.11
+  - python=3.10
   - access
   - bokeh
   - clustergram
@@ -51,7 +51,7 @@ dependencies:
   - pygeos
   - pyinterpolate
   - pykrige
-  # - pyrosm
+  - pyrosm
   - pysal
   - python-igraph
   - r5py

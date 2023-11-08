@@ -49,7 +49,7 @@ dependencies:
   - polyline
   - pyarrow
   - pygeos
-  - pyinterpolate
+  - pyinterpolate=0.4
   - pykrige
   - pyrosm
   - pysal

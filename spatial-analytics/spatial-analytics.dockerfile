@@ -25,11 +25,10 @@ RUN echo "Upgrading conda" \
 && conda update --yes -n base conda \
 && conda install --override-channels -c conda-forge mamba 'python_abi=*=*cp*' \
 && mamba env update -n base -f environment.yml \
-&& pip install -r requirements.txt
-
-#USER root
-# Do not show announcements
-RUN jupyter labextension disable "@jupyterlab/apputils-extension:announcements" \
+&& pip install -r requirements.txt \
+&& jupyter labextension disable "@jupyterlab/apputils-extension:announcements" \
+&& jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+&& jupyter lab build  \
 && conda clean --all --yes --force-pkgs-dirs \
 && jupyter lab clean -y \
 && npm cache clean --force # \

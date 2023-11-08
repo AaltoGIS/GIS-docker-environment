@@ -22,7 +22,6 @@ COPY ./instance_start_script.sh /usr/local/bin/instance_start_script.sh
 
 ### Installing the GIS libraries
 RUN echo "Upgrading conda" \
-&& conda update --yes -n base conda \
 && conda install --override-channels -c conda-forge mamba 'python_abi=*=*cp*' \
 && mamba env update -n base -f environment.yml \
 && pip install -r requirements.txt \

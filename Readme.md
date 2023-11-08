@@ -40,8 +40,8 @@ Other useful docs:
    4. Push the image to Rahti image registry
    
       - `docker push docker-registry.rahti.csc.fi/<project-name>/<image-name>:latest`
-        - Sustainability course: `docker push docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
-        - Spatial analytics course: `docker push docker-registry.rahti.csc.fi/spatial-analytics-course/spatial-analytics:latest`
+        - Sustainability course: `sudo docker push docker-registry.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
+        - Spatial analytics course: `sudo docker push docker-registry.rahti.csc.fi/spatial-analytics-course/spatial-analytics:latest`
       
 **Deploy the pushed image to Rahti**
 

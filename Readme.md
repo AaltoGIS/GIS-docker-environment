@@ -27,7 +27,7 @@ Other useful docs:
       
    2. Login to the Rahti docker image registry from docker and oc (get the tokens from Rahti registry web pages)
    
-      - `docker login -p <DOCKER-LOGIN-TOKEN-HERE> -u unused docker-registry.rahti.csc.fi`
+      - `sudo docker login -p <DOCKER-LOGIN-TOKEN-HERE> -u unused docker-registry.rahti.csc.fi`
       - `oc login --token <OpenShift-LOGIN-TOKEN-HERE> rahti.csc.fi:8443`   
       - Switch to correct project (if needed) by: `oc project <project name>`
       

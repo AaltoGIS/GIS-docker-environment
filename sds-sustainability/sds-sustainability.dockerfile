@@ -1,12 +1,13 @@
-FROM jupyter/minimal-notebook
+# Use Python 3.10 (should match with Python interpreter in environment.yml)
+FROM jupyter/minimal-notebook:python-3.10.11
 
 MAINTAINER Henrikki Tenkanen <henrikki.tenkanen@aalto.fi>
 
 # Install openjdk
 USER root
 RUN apt-get update \
-    && apt-get install -y openjdk-11-jdk \
-    && apt-get clean
+    && apt-get clean \
+    && apt-get install -y openjdk-19-jdk
 
 # the user set here will be the user that students will use
 USER $NB_USER
@@ -19,20 +20,15 @@ COPY ./instance_start_script.sh /usr/local/bin/instance_start_script.sh
 
 ### Installing the GIS libraries
 RUN echo "Upgrading conda" \
-&& conda update --yes -n base conda \
-&& conda install mamba -n base -c conda-forge \
-# Install pkgs from environment.yml
+&& conda install --override-channels -c conda-forge mamba 'python_abi=*=*cp*' \
 && mamba env update -n base -f environment.yml \
-# Install with pip from requirements.txt
 && pip install -r requirements.txt \
-# Install keplergl extension
+&& jupyter labextension disable "@jupyterlab/apputils-extension:announcements" \
 && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-&& jupyter labextension install keplergl-jupyter \
 && jupyter lab build  \
-# Clean as much as possible
 && conda clean --all --yes --force-pkgs-dirs \
 && jupyter lab clean -y \
-&& npm cache clean --force \
+&& npm cache clean --force # \
 && find /opt/conda/ -follow -type f -name '*.a' -delete \
 && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
 && find /opt/conda/ -follow -type f -name '*.js.map' -delete \

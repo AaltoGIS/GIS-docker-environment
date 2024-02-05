@@ -10,6 +10,7 @@ dependencies:
   - jupyterlab<4.0
   - jupyterlab-git
   - access
+  - cartopy
   - contextily
   - dask
   - dask-ml
@@ -20,7 +21,10 @@ dependencies:
   - geojson
   - geoplot
   - geoviews
+  - hvplot
   - inequality
+  - ipywidgets=7.8.0
+  - keplergl
   - mapclassify
   - matplotlib
   - mesa
@@ -33,6 +37,7 @@ dependencies:
   - osmnx
   - palettable
   - pandana
+  - plotly
   - pointpats
   - pyrosm
   - pysal
@@ -53,5 +58,6 @@ dependencies:
   - seaborn
   - pandas
   - urbanaccess
+  - widgetsnbextension=3.6.5
   - nose
   - jinja2

@@ -23,6 +23,7 @@ dependencies:
   - geoviews
   - hvplot
   - inequality
+  # Solving KeplerGL issues: https://github.com/keplergl/kepler.gl/issues/1993
   - ipywidgets=7.8.0
   - keplergl
   - mapclassify
@@ -58,6 +59,7 @@ dependencies:
   - seaborn
   - pandas
   - urbanaccess
+  # Solving KeplerGL issues: https://github.com/keplergl/kepler.gl/issues/1993
   - widgetsnbextension=3.6.5
   - nose
   - jinja2

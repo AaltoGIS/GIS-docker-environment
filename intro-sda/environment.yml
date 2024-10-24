@@ -1,0 +1,84 @@
+name: base
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11.6
+  - clustergram
+  - contextily
+  - dash
+  - dask=2023.3.2
+  - dask-ml
+  - datashader
+  - earthpy
+  - esda
+  - folium
+  # - geocube
+  - geojson
+  - geopandas
+  - geoplot
+  - geopy
+  - giddy
+  - gstools
+  - h3-py
+  - hvplot
+  - inequality
+  - jupyterlab=4.2.4
+  - jupyterlab-git
+  - legendgram
+  - mapclassify
+  - matplotlib
+  - mesa
+  - mgwr
+  - momepy
+  - movingpandas
+  - mplleaflet
+  - networkx
+  - openpyxl
+  - openjdk
+  - palettable
+  - pandana
+  - pandas
+  - pexpect==4.9.0
+  - plotly_express
+  - pointpats
+  - polyline
+  - pyarrow
+  - pygeos
+  #- pyinterpolate=0.5.2
+  #- pylibtiff=0.6.1
+  - pykrige
+  - pyogrio
+  #- pyrosm
+  - pysal
+  - python-igraph
+  - r5py
+  - r5py.sampledata.helsinki>=0.1.1dev2
+  - r5py.sampledata.sao_paulo>=0.1.1dev2
+  - rasterio
+  - rasterstats
+  - richdem
+  - rioxarray
+  - scikit-image
+  - scikit-learn=1.2.2
+  # - scikit-mobility
+  - scipy
+  - seaborn
+  - segregation
+  - spaghetti
+  - spint
+  - splot
+  - spreg
+  - sqlalchemy
+  - statsmodels
+  - tobler
+  - tqdm
+  - urbanaccess
+  # - vaex
+  # - vaex-arrow
+  - xarray
+  - xarray_leaflet
+  - xarray-spatial
+  - xlrd
+  - xlsxwriter

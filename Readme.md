@@ -16,14 +16,15 @@ Other useful docs:
 3. Run build.sh (within the course folder) that will create the Docker container 
    1. If the image is large, try to make it smaller (5 GB limit) with [these tricks](https://docs.csc.fi/cloud/rahti/images/keeping_docker_images_small/). Take a look at [spatial-analytics.dockerfile](spatial-analytics/spatial-analytics.dockerfile) for inspiration.
    2. Test running the docker locally by executing (an example for `csc/spatial-analytics` -image): `docker run --rm -ti -p 8888:8888 -v ${PWD}:/home/jovyan/work csc/spatial-analytics`
+
 4. Make a dedicated project for the course if it does not exist yet at https://rahti.csc.fi/
 
 5. Push to docker image to Rahti (replace `<image-name>` and `<project-name>` below to correspond your settings):
    
-   1. Login to the Rahti docker image registry from docker and oc (get the tokens from Rahti registry web pages)
+   1. Login to the Rahti docker image registry from OC and Docker (get the token from [Rahti registry web pages](https://oauth-openshift.apps.2.rahti.csc.fi/oauth/token/request))
    
-      - `sudo docker login -p <DOCKER-LOGIN-TOKEN-HERE> -u unused docker-registry.rahti.csc.fi`
-      - `oc login --token <OpenShift-LOGIN-TOKEN-HERE> rahti.csc.fi:8443`   
+      - `oc login --token=sha256~XXXXXXXXX --server=https://api.2.rahti.csc.fi:6443`
+      - `docker login -u g -p $(oc whoami -t) image-registry.apps.2.rahti.csc.fi` 
       - Switch to correct project (if needed) by: `oc project <project name>`
       
    2. Tag the image you want to send to the registry (Rahti 2)
@@ -39,6 +40,12 @@ Other useful docs:
         - IntroSDA course: `docker push image-registry.apps.2.rahti.csc.fi/intro-sda-course/intro-sda:latest`
         - Sustainability course: `docker push image-registry.apps.2.rahti.csc.fi/sds-sustainability/sds-sustainability:latest`
         - Spatial analytics course: `docker push image-registry.apps.2.rahti.csc.fi/spatial-analytics-course/spatial-analytics:latest`
+   
+   4. Give access for anyone to pull the image from registry without authentication
+   
+      - `oc policy add-role-to-user registry-viewer system:anonymous -n <project>`:
+      
+        - IntroSDA: `oc policy add-role-to-user registry-viewer system:anonymous -n intro-sda-course`
 
    
 ## How to update Docker image?

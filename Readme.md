@@ -5,6 +5,10 @@ UPDATED INSTRUCTIONS at CSC (2024):
  - [How to login to Rahti 2 registry and push a docker image](https://docs.csc.fi/cloud/rahti2/images/Using_Rahti_2_integrated_registry/)
  - [Guide for Noppe system for teachers](https://docs.csc.fi/cloud/noppe/guide_for_teachers/)
 
+**NEW: Build Docker image directly in Rahti2**:
+
+ - [Using Rahti 2 to build container images](https://docs.csc.fi/cloud/rahti2/images/creating/#using-rahti-2-to-build-container-images)
+
 Other useful docs:
 - [How to get Docker to play nicely with your Python Data Science package](https://medium.com/better-programming/how-to-get-docker-to-play-nicely-with-your-python-data-science-packages-81d16f1080d2)
 

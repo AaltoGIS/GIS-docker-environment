@@ -4,11 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
-  - python=3.10
-  - gitpython
-  - git
-  - jupyterlab<4.0
-  - jupyterlab-git
+  - python=3.11.6
   - access
   - cartopy
   - contextily
@@ -16,15 +12,18 @@ dependencies:
   - dask-ml
   - datashader
   - esda
-  - fiona=1.8.22
   - geopandas
   - geojson
   - geoplot
   - geoviews
+  - gitpython
+  - git
   - hvplot
   - inequality
   # Solving KeplerGL issues: https://github.com/keplergl/kepler.gl/issues/1993
   - ipywidgets=7.8.0
+  - jupyterlab=4.3.4
+  - jupyterlab-git
   - keplergl
   - mapclassify
   - matplotlib
@@ -33,7 +32,7 @@ dependencies:
   - momepy
   - movingpandas
   - networkx
-  # - openjdk
+  - openjdk
   - openpyxl
   - osmnx
   - palettable

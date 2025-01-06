@@ -1,13 +1,12 @@
-# Use Python 3.10 (should match with Python interpreter in environment.yml)
-FROM jupyter/minimal-notebook:python-3.10.11
+# Use Python 3.11 (should match with Python interpreter in environment.yml)
+FROM jupyter/minimal-notebook:python-3.11.6
 
-MAINTAINER Henrikki Tenkanen <henrikki.tenkanen@aalto.fi>
+LABEL org.opencontainers.image.authors="Henrikki Tenkanen <henrikki.tenkanen@aalto.fi>"
 
 # Install openjdk
 USER root
 RUN apt-get update \
-    && apt-get clean \
-    && apt-get install -y openjdk-19-jdk
+    && apt-get clean
 
 # the user set here will be the user that students will use
 USER $NB_USER
@@ -24,10 +23,7 @@ RUN echo "Upgrading conda" \
 && mamba env update -n base -f environment.yml \
 && pip install -r requirements.txt \
 && jupyter labextension disable "@jupyterlab/apputils-extension:announcements" \
-&& jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-&& jupyter lab build  \
 && conda clean --all --yes --force-pkgs-dirs \
-&& jupyter lab clean -y \
 && npm cache clean --force # \
 && find /opt/conda/ -follow -type f -name '*.a' -delete \
 && find /opt/conda/ -follow -type f -name '*.pyc' -delete \
@@ -37,5 +33,4 @@ RUN echo "Upgrading conda" \
 
 USER $NB_USER
 WORKDIR /home/$NB_USER
-CMD ["/usr/local/bin/instance_start_script.sh"]
 

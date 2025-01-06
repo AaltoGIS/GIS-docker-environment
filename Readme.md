@@ -17,7 +17,7 @@ Other useful docs:
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/), [configure Docker to work without sudo](https://docs.docker.com/engine/install/linux-postinstall/) and install OpenShift for [Linux](https://www.howtoforge.com/how-to-install-and-configure-openshift-origin-paas-server-on-ubuntu-2004/)/[MacOS](https://formulae.brew.sh/formula/openshift-cli) 
    1. For Docker, [enable experimental features](https://stackoverflow.com/a/44346323)
 2. Update the [Python environment](environment.yml) with required packages
-3. Run `build.sh` on Linux or `build_macos.sh` on MacOS that will create the Docker container 
+3. Run `build.sh` on Linux machine that will create the Docker container 
    1. If the image is large, try to make it smaller (5 GB limit) with [these tricks](https://docs.csc.fi/cloud/rahti/images/keeping_docker_images_small/). Take a look at [spatial-analytics.dockerfile](spatial-analytics/spatial-analytics.dockerfile) for inspiration.
    2. Test running the docker locally by executing (an example for `csc/spatial-analytics` -image): `docker run --rm -ti -p 8888:8888 -v ${PWD}:/home/jovyan/work csc/spatial-analytics`
 
@@ -49,8 +49,8 @@ Other useful docs:
    
       - `oc policy add-role-to-user registry-viewer system:anonymous -n <project>`:
       
-        - IntroSDA: `oc policy add-role-to-user registry-viewer system:anonymous -n intro-sda-course`
-
+        - IntroSDA course: `oc policy add-role-to-user registry-viewer system:anonymous -n intro-sda-course`
+        - Sustainability course: `oc policy add-role-to-user registry-viewer system:anonymous -n sds-sustainability`
    
 ## How to update Docker image?
 

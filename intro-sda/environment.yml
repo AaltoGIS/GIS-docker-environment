@@ -24,7 +24,7 @@ dependencies:
   - h3-py
   - hvplot
   - inequality
-  - jupyterlab=4.2.4
+  - jupyterlab=4.3.4
   - jupyterlab-git
   - legendgram
   - mapclassify
